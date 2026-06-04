@@ -155,6 +155,42 @@ function formatDate(dateStr) {
 
 loadFeaturedArticles();
 
+/* ── Legacy Program Popup ── */
+(function initLegacyPopup() {
+  // Only show once per session
+  if (sessionStorage.getItem('legacyPopupShown')) return;
+
+  const overlay = document.getElementById('legacy-popup-overlay');
+  if (!overlay) return;
+
+  function showPopup() {
+    overlay.classList.add('active');
+    sessionStorage.setItem('legacyPopupShown', 'true');
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Show after 1.5s — long enough for the page to settle
+  setTimeout(showPopup, 1500);
+
+  // Close on backdrop click
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closePopup(); });
+
+  // X button
+  document.getElementById('legacy-popup-close')?.addEventListener('click', closePopup);
+
+  // "Maybe later" link
+  document.getElementById('legacy-popup-later')?.addEventListener('click', closePopup);
+
+  // ESC key
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopup(); });
+})();
+
 /* ── Number Counters (ensure init after DOM ready) ── */
 document.querySelectorAll('[data-counter]').forEach(el => {
   const observer = new IntersectionObserver((entries) => {

@@ -258,18 +258,36 @@
     </svg>
   </div>
 
-  <!-- Book a Conversation -->
+  <!-- Build your Legacy Program -->
   <section class="section-padding cta-banner" style="background: var(--color-navy-dark);">
     <div class="container">
       <div class="cta-banner-inner fade-in">
         <div>
-          <h2 style="color: white;">Not sure where to start?</h2>
-          <p style="color: rgba(255,255,255,0.7);">Book a free 30-minute conversation. We'll help you find a giving strategy that fits your values, your finances, and your life.</p>
+          <p class="section-label" style="color: var(--color-teal-light); margin-bottom: 10px;">Charitable Planning</p>
+          <h2 style="color: white;">Build your <em style="color: var(--color-green); font-style: italic;">Legacy Program.</em></h2>
+          <p style="color: rgba(255,255,255,0.7);">Your values don't have to end with you. In a free 30-minute call, we'll help you structure a giving plan that reflects what matters most — and makes it last.</p>
         </div>
         <a href="contact.html" class="btn btn-primary btn-lg">Book a Free Call</a>
       </div>
     </div>
   </section>
+
+  <!-- Legacy Program Popup -->
+  <div class="legacy-popup-overlay" id="legacy-popup-overlay" role="dialog" aria-modal="true" aria-label="Build your Legacy Program">
+    <div class="legacy-popup" id="legacy-popup">
+      <button class="legacy-popup-close" id="legacy-popup-close" aria-label="Close">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="legacy-popup-icon">
+        <i data-lucide="heart-handshake"></i>
+      </div>
+      <p class="legacy-popup-eyebrow">Charitable Planning</p>
+      <h2 class="legacy-popup-title">Build your <em>Legacy Program.</em></h2>
+      <p class="legacy-popup-body">Your values don't have to end with you. In a free 30-minute call, we'll help you structure a giving plan that reflects what matters most — and makes it last.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg legacy-popup-cta">Book a Free Call</a>
+      <p class="legacy-popup-dismiss"><button type="button" id="legacy-popup-later">Maybe later</button></p>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
