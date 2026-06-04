@@ -430,7 +430,7 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
 }
 .footer-brand { display: flex; flex-direction: column; gap: 16px; }
 .footer-logo {
-  height: 48px;
+  height: 80px;
   width: auto;
   display: block;
   filter: brightness(0) invert(1);
