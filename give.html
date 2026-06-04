@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giving Guide — charitablegiving.ca</title>
+  <meta name="description" content="Canada's complete guide to charitable giving — tax strategies, donor-advised funds, gifts of securities, and legacy giving.">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/give.css">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="charitablegiving.ca" height="40"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="give.html">Give</a></li>
+        <li><a href="find.html">Find a Charity</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="advisors.html">For Advisors</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a Call</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <button class="nav-mobile-close" id="nav-mobile-close"><i data-lucide="x"></i></button>
+      <ul class="nav-mobile-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="give.html">Give</a></li>
+        <li><a href="find.html">Find a Charity</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="advisors.html">For Advisors</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="give-hero">
+    <div class="container">
+      <h1>Give with intention.</h1>
+      <p>From verifying a charity to maximizing your tax benefit — a complete guide to giving well in Canada.</p>
+    </div>
+  </section>
+
+  <!-- Sticky Tab Nav -->
+  <nav class="give-tabs" id="give-tabs">
+    <div class="container">
+      <div class="give-tabs-inner">
+        <a href="#getting-started" class="give-tab active" data-section="getting-started">Getting Started</a>
+        <a href="#strategies" class="give-tab" data-section="strategies">Giving Strategies</a>
+        <a href="#tax" class="give-tab" data-section="tax">Tax Benefits</a>
+        <a href="#legacy" class="give-tab" data-section="legacy">Legacy Giving</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section: Getting Started -->
+  <section class="section-padding give-section" id="getting-started" style="background: var(--color-cream);">
+    <div class="container">
+      <div class="section-header slide-up">
+        <p class="section-label">Getting Started</p>
+        <h2>What every first-time donor needs to know.</h2>
+        <p>Charitable giving in Canada is well-regulated and straightforward. Here's what matters before you make your first gift.</p>
+      </div>
+
+      <div class="give-content-grid">
+        <div class="give-main">
+          <div class="content-block slide-up">
+            <h3>What Is a Registered Charity?</h3>
+            <p>A registered charity has been approved by the Canada Revenue Agency (CRA) to issue official tax receipts and must file public annual reports. There are approximately 86,000 registered charities in Canada, in three categories: charitable organizations (hands-on service providers), public foundations (grant-makers with broad public support), and private foundations (family-controlled grant-makers).</p>
+            <p>All three can accept donations and issue official receipts. Only registered charities can issue tax-receiptable donations — so always verify before you give.</p>
+          </div>
+
+          <div class="content-block slide-up">
+            <h3>How to Verify a Charity via CRA</h3>
+            <ol class="steps-list">
+              <li><span class="step-num">1</span>
+                <div><strong>Search the CRA Registry</strong><p>Visit <a href="https://www.canada.ca/en/revenue-agency/services/charities-giving.html" target="_blank" rel="noopener">canada.ca/charities-giving</a> and search by charity name or Business Number (BN).</p></div>
+              </li>
+              <li><span class="step-num">2</span>
+                <div><strong>Check Registration Status</strong><p>The charity should show as "Registered" with a valid BN in the format XXXXXXXXX RR 000X. Revoked or annulled charities cannot issue valid receipts.</p></div>
+              </li>
+              <li><span class="step-num">3</span>
+                <div><strong>Review Their T3010 Filings</strong><p>Annual information returns show revenues, expenditures, and program descriptions. Look for consistent filings and reasonable ratios between program spending and overhead.</p></div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="content-block slide-up">
+            <h3>Your 3 Steps to a First Gift</h3>
+            <div class="steps-cards">
+              <div class="step-card">
+                <div class="step-card-num">1</div>
+                <h4>Choose a cause that matters to you</h4>
+                <p>Give to something genuinely personal — health, community, environment, or wherever you feel drawn. Sustainable giving comes from authentic connection.</p>
+              </div>
+              <div class="step-card">
+                <div class="step-card-num">2</div>
+                <h4>Verify the charity is registered</h4>
+                <p>Look up the organization on the CRA registry. Confirm their BN and that they are in good standing before completing your donation.</p>
+              </div>
+              <div class="step-card">
+                <div class="step-card-num">3</div>
+                <h4>Keep your official receipt</h4>
+                <p>You'll need it at tax time. Official receipts must include the charity's BN, the amount, and your name. Without this, the credit may be disallowed.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="content-block slide-up">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-list">
+              <div class="accordion-item">
+                <button class="accordion-trigger">Is there a minimum donation amount to get a tax receipt? <span class="accordion-icon"><i data-lucide="chevron-down"></i></span></button>
+                <div class="accordion-content"><div class="accordion-content-inner">The CRA does not set a minimum donation amount. However, most charities issue receipts for gifts of $10 or more. For gifts below this threshold, check with the specific organization.</div></div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-trigger">Can I donate to a charity outside Canada and get a tax receipt? <span class="accordion-icon"><i data-lucide="chevron-down"></i></span></button>
+                <div class="accordion-content"><div class="accordion-content-inner">Generally, no. Only donations to registered Canadian charities (and certain exceptions for U.S. charities under the Canada-U.S. tax treaty) generate Canadian tax receipts. Many Canadian charities fund international programs — giving through these organizations lets you support global causes while receiving a Canadian receipt.</div></div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-trigger">How long can I carry forward unused donation receipts? <span class="accordion-icon"><i data-lucide="chevron-down"></i></span></button>
+                <div class="accordion-content"><div class="accordion-content-inner">You can carry forward unused charitable donation tax credits for up to five years. This is especially valuable if your income varies year to year — save receipts from lower-income years and claim them when you're in a higher bracket for a larger credit.</div></div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-trigger">Can I combine my donations with my spouse's on one return? <span class="accordion-icon"><i data-lucide="chevron-down"></i></span></button>
+                <div class="accordion-content"><div class="accordion-content-inner">Yes. Spouses can pool all receipts and claim them on either return. It's generally more advantageous to claim all donations on the higher-income partner's return, as the 29% (or 33%) federal rate applies to all amounts above $200 of total donations — not $200 per person.</div></div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-trigger">What is the difference between a donation and a sponsorship? <span class="accordion-icon"><i data-lucide="chevron-down"></i></span></button>
+                <div class="accordion-content"><div class="accordion-content-inner">A donation is a gift for which the donor receives no material benefit in return. A sponsorship provides the donor with advertising or promotional value, which must be deducted from the receiptable amount. If you pay $500 for a gala table valued at $200, your receipt should be for $300 — not $500.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="give-sidebar">
+          <div class="sidebar-card card">
+            <div class="card-body">
+              <h4>Find a Charity</h4>
+              <p>Use our guided questionnaire to find organizations that match your values in minutes.</p>
+              <a href="find.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:12px;">Start Finder</a>
+            </div>
+          </div>
+          <div class="sidebar-card card">
+            <div class="card-body">
+              <h4>Talk to an Advisor</h4>
+              <p>Not sure where to start? Book a free 30-minute conversation about your giving goals.</p>
+              <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:12px;">Book a Call</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Strategies -->
+  <section class="section-padding give-section" id="strategies" style="background: var(--color-linen);">
+    <div class="container">
+      <div class="section-header slide-up">
+        <p class="section-label">Giving Strategies</p>
+        <h2>Give smarter, not just more.</h2>
+        <p>The structure of your gift matters almost as much as the amount. These strategies can multiply your impact.</p>
+      </div>
+
+      <div class="strategies-grid">
+        <div class="strategy-card card slide-up">
+          <div class="strategy-icon"><i data-lucide="repeat"></i></div>
+          <h3>Monthly vs. One-Time</h3>
+          <p>Charities strongly prefer recurring donors. A $25/month commitment ($300/year) is more operationally valuable than a single $250 gift — it allows programs to be planned and staffed over time. Consider converting your annual one-time gifts to monthly contributions.</p>
+        </div>
+        <div class="strategy-card card slide-up">
+          <div class="strategy-icon"><i data-lucide="building-2"></i></div>
+          <h3>Donor-Advised Fund (DAF)</h3>
+          <p>A DAF lets you make an irrevocable charitable contribution and receive your tax receipt immediately — then recommend grants to specific charities over time. Ideal for high-income years or when donating appreciated securities to multiple charities.</p>
+          <a href="article.html?slug=donor-advised-fund-canada" class="btn btn-ghost btn-sm">Learn more →</a>
+        </div>
+        <div class="strategy-card card slide-up">
+          <div class="strategy-icon"><i data-lucide="trending-up"></i></div>
+          <h3>Gifts of Securities</h3>
+          <p>Donating publicly traded shares, ETFs, or mutual funds directly to a registered charity eliminates capital gains tax entirely. You receive a receipt for the full fair market value — making this one of the most tax-efficient strategies in Canadian philanthropy.</p>
+          <a href="article.html?slug=donating-stocks-instead-of-cash" class="btn btn-ghost btn-sm">Learn more →</a>
+        </div>
+        <div class="strategy-card card slide-up">
+          <div class="strategy-icon"><i data-lucide="briefcase"></i></div>
+          <h3>Employer Matching</h3>
+          <p>Many Canadian employers will match your donation dollar for dollar — some at 2:1. Check your HR portal or ask your HR department. Unused matching programs mean leaving free money on the table for causes you care about.</p>
+          <a href="article.html?slug=matching-gifts-employer-programs" class="btn btn-ghost btn-sm">Learn more →</a>
+        </div>
+        <div class="strategy-card card slide-up">
+          <div class="strategy-icon"><i data-lucide="users"></i></div>
+          <h3>Giving Circles</h3>
+          <p>Pool your giving with friends, family, or colleagues to fund larger grants to charities you collectively choose. Giving circles combine the social benefits of community with the strategic benefits of coordinated philanthropy.</p>
+          <a href="article.html?slug=giving-circles-canada" class="btn btn-ghost btn-sm">Learn more →</a>
+        </div>
+        <div class="strategy-card card slide-up">
+          <div class="strategy-icon"><i data-lucide="building"></i></div>
+          <h3>Corporate Giving</h3>
+          <p>Business owners can deduct charitable donations at the corporate level, engage employees through matching programs, and in some cases use sophisticated structures to fund philanthropy through a corporation or family foundation.</p>
+          <a href="advisors.html" class="btn btn-ghost btn-sm">Advisor resources →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Tax -->
+  <section class="section-padding give-section" id="tax" style="background: var(--color-cream);">
+    <div class="container">
+      <div class="section-header slide-up">
+        <p class="section-label">Tax Benefits</p>
+        <h2>Your donation is worth more than you think.</h2>
+        <p>Federal and provincial tax credits can return 30–50% of your donation depending on province and amount. Use the calculator below to estimate your savings.</p>
+      </div>
+
+      <!-- Federal Credit Card -->
+      <div class="tax-credit-card card slide-up">
+        <div class="card-body">
+          <h3>Federal Charitable Donation Tax Credit</h3>
+          <div class="federal-rates">
+            <div class="rate-block">
+              <span class="rate-pct">15%</span>
+              <p>On the first <strong>$200</strong> of total donations per tax year</p>
+            </div>
+            <div class="rate-divider">+</div>
+            <div class="rate-block">
+              <span class="rate-pct">29%</span>
+              <p>On all amounts <strong>above $200</strong> (or 33% for top-bracket taxpayers)</p>
+            </div>
+          </div>
+          <div class="disclaimer-box" style="margin-top:20px;">
+            <strong>Important:</strong> These are non-refundable credits — they reduce the tax you owe, but won't generate a refund if your credits exceed your tax. Unused credits can be carried forward up to 5 years, or transferred to a spouse.
+          </div>
+        </div>
+      </div>
+
+      <!-- Tax Estimator -->
+      <div class="tax-estimator card slide-up">
+        <div class="card-body">
+          <h3>Tax Savings Estimator</h3>
+          <p style="color:var(--color-muted);margin-bottom:24px;">Estimate your combined federal + provincial tax credits on your donation.</p>
+          <div class="estimator-controls">
+            <div class="form-group">
+              <label class="form-label">Province of Residence</label>
+              <select class="form-control" id="est-province">
+                <option value="ON">Ontario</option>
+                <option value="BC">British Columbia</option>
+                <option value="AB">Alberta</option>
+                <option value="QC">Quebec</option>
+                <option value="MB">Manitoba</option>
+                <option value="SK">Saskatchewan</option>
+                <option value="NS">Nova Scotia</option>
+                <option value="NB">New Brunswick</option>
+                <option value="PE">Prince Edward Island</option>
+                <option value="NL">Newfoundland & Labrador</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Total Annual Donation Amount: <strong id="donation-display">$500</strong></label>
+              <input type="range" min="100" max="10000" step="100" value="500" class="transparency-slider" id="est-amount">
+              <div class="slider-labels"><span>$100</span><span>$10,000</span></div>
+            </div>
+          </div>
+          <div class="estimator-results" id="estimator-results">
+            <!-- Populated by JS -->
+          </div>
+          <canvas id="tax-chart" height="120" style="margin-top:24px;"></canvas>
+          <div class="disclaimer-box" style="margin-top:20px;">
+            <strong>Disclaimer:</strong> This calculator provides estimates only. Provincial rates shown are approximate and may not reflect surtaxes, low-income reductions, or other adjustments. Consult a qualified tax professional for advice specific to your situation.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Legacy -->
+  <section class="section-padding give-section" id="legacy" style="background: var(--color-linen);">
+    <div class="container">
+      <div class="section-header slide-up">
+        <p class="section-label">Legacy Giving</p>
+        <h2>A gift that outlives you.</h2>
+        <p>The largest gift most Canadians will ever make to charity is the one they make through their estate. These tools help you make it well.</p>
+      </div>
+
+      <div class="legacy-grid">
+        <div class="legacy-card card slide-up">
+          <div class="legacy-card-icon"><i data-lucide="scroll-text"></i></div>
+          <h3>Charitable Bequests</h3>
+          <p>A bequest in your will directs a specific amount, asset, or percentage of your estate to a registered charity. The most common and straightforward form of legacy giving — and completely flexible to update at any time.</p>
+          <a href="article.html?slug=charitable-bequests" class="btn btn-ghost btn-sm">Read more →</a>
+        </div>
+        <div class="legacy-card card slide-up">
+          <div class="legacy-card-icon"><i data-lucide="piggy-bank"></i></div>
+          <h3>RRSP / RRIF Designations</h3>
+          <p>Naming a charity as beneficiary of your RRSP or RRIF at the time of your passing can offset the income tax generated by the deemed disposition — potentially eliminating tens of thousands in taxes.</p>
+          <a href="article.html?slug=rrsp-rrif-and-charity" class="btn btn-ghost btn-sm">Read more →</a>
+        </div>
+        <div class="legacy-card card slide-up">
+          <div class="legacy-card-icon"><i data-lucide="shield-check"></i></div>
+          <h3>Life Insurance Gifts</h3>
+          <p>Donate a life insurance policy to a registered charity (naming it as owner and beneficiary) to generate tax receipts on premiums paid and a large future gift. An efficient way to make a major gift on a modest budget.</p>
+          <a href="contact.html" class="btn btn-ghost btn-sm">Speak with an advisor →</a>
+        </div>
+        <div class="legacy-card card slide-up">
+          <div class="legacy-card-icon"><i data-lucide="infinity"></i></div>
+          <h3>Endowment Funds</h3>
+          <p>An endowment preserves your charitable gift in perpetuity, investing the capital and distributing only the income. A $100,000 endowment at 4% distribution generates $4,000 per year — forever.</p>
+          <a href="contact.html" class="btn btn-ghost btn-sm">Speak with an advisor →</a>
+        </div>
+      </div>
+
+      <div class="legacy-cta card slide-up" style="background: var(--color-navy); color: white; margin-top: 48px;">
+        <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+          <div>
+            <h3 style="color:white;">Ready to plan your legacy gift?</h3>
+            <p style="color:rgba(255,255,255,0.75);">Book a free 30-minute conversation to discuss your legacy giving intentions with our team.</p>
+          </div>
+          <a href="contact.html" class="btn btn-primary btn-lg">Book a Free Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="charitablegiving.ca" height="48" class="footer-logo">
+          <p class="footer-tagline">From your first gift to your greatest legacy.</p>
+        </div>
+        <div class="footer-nav-columns">
+          <div class="footer-col"><h4>Giving Guide</h4><ul><li><a href="give.html#getting-started">Getting Started</a></li><li><a href="give.html#strategies">Giving Strategies</a></li><li><a href="give.html#tax">Tax Benefits</a></li><li><a href="give.html#legacy">Legacy Giving</a></li></ul></div>
+          <div class="footer-col"><h4>Find a Charity</h4><ul><li><a href="find.html">Charity Finder</a></li><li><a href="find.html#directory">Full Directory</a></li><li><a href="find.html#mylist">My Saved List</a></li></ul></div>
+          <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">All Articles</a></li><li><a href="learn.html?filter=beginner">Beginner Guides</a></li><li><a href="learn.html?filter=tax">Tax &amp; Planning</a></li></ul></div>
+          <div class="footer-col"><h4>For Advisors</h4><ul><li><a href="advisors.html">How It Works</a></li><li><a href="advisors.html#resources">Planning Tools</a></li><li><a href="contact.html">Book a Call</a></li></ul></div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-disclaimer">charitablegiving.ca is an independent educational platform and is not a registered charity. Content is for informational purposes only and does not constitute financial, legal, or tax advice. Always consult a qualified professional.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2025 charitablegiving.ca | <a href="#">Privacy Policy</a> &middot; <a href="#">Terms of Use</a> &middot; <a href="advisors.html">Advisor Inquiry</a></p>
+        <p class="footer-maple">Built with care in Canada 🍁</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/charities.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/give.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

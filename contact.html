@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Call — charitablegiving.ca</title>
+  <meta name="description" content="Book a free 30-minute conversation about your charitable giving goals. No pressure — just useful guidance.">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="charitablegiving.ca" height="40"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="give.html">Give</a></li>
+        <li><a href="find.html">Find a Charity</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="advisors.html">For Advisors</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a Call</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <button class="nav-mobile-close" id="nav-mobile-close"><i data-lucide="x"></i></button>
+      <ul class="nav-mobile-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="give.html">Give</a></li>
+        <li><a href="find.html">Find a Charity</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="advisors.html">For Advisors</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- Contact Layout -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Left: Contact Info -->
+        <div class="contact-info">
+          <p class="section-label">Get in Touch</p>
+          <h1>Let's talk about your giving.</h1>
+          <p class="contact-intro">Book a free 30-minute conversation with our team. Whether you're making your first donation or planning a legacy gift, we'll help you think it through — with no pressure and no agenda.</p>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span class="contact-detail-icon"><i data-lucide="mail"></i></span>
+              <div>
+                <strong>Email</strong>
+                <!-- Replace with actual email address -->
+                <a href="mailto:hello@charitablegiving.ca">hello@charitablegiving.ca</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-icon"><i data-lucide="phone"></i></span>
+              <div>
+                <strong>Phone</strong>
+                <!-- Replace with actual phone number -->
+                <a href="tel:+16135550100">(613) 555-0100</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-icon"><i data-lucide="map-pin"></i></span>
+              <div>
+                <strong>Serving all of Canada</strong>
+                <span>Conversations available by phone or video</span>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <span class="contact-detail-icon"><i data-lucide="clock"></i></span>
+              <div>
+                <strong>Response time</strong>
+                <span>Within 1 business day</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-badges">
+            <div class="contact-badge"><i data-lucide="shield-check"></i> Free consultation</div>
+            <div class="contact-badge"><i data-lucide="lock"></i> Confidential</div>
+            <div class="contact-badge"><i data-lucide="heart"></i> No sales pressure</div>
+          </div>
+        </div>
+
+        <!-- Right: Calendar + Fallback Form -->
+        <div class="contact-right">
+          <!-- Calendly Placeholder -->
+          <!-- Replace this block with actual Calendly embed -->
+          <div class="calendly-placeholder">
+            <div class="calendly-placeholder-inner">
+              <i data-lucide="calendar"></i>
+              <h3>Book a Free 30-Minute Call</h3>
+              <p>Choose a time that works for you. We'll send a confirmation with a video or phone call link.</p>
+              <p class="calendly-note"><!-- Replace Calendly placeholder with actual embed --></p>
+              <a href="#contact-form" class="btn btn-primary btn-lg">Use Contact Form Instead</a>
+            </div>
+          </div>
+
+          <!-- Fallback Contact Form -->
+          <div class="contact-form-section" id="contact-form">
+            <h3>Or send us a message</h3>
+            <form id="contact-form-el">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input type="text" class="form-control" placeholder="Jane" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" class="form-control" placeholder="Smith" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" placeholder="jane@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">What would you like to talk about?</label>
+                <select class="form-control">
+                  <option>Making my first donation</option>
+                  <option>Giving strategies (DAF, securities, etc.)</option>
+                  <option>Tax planning and receipts</option>
+                  <option>Legacy and estate giving</option>
+                  <option>Advisor inquiry</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Message (optional)</label>
+                <textarea class="form-control" rows="4" placeholder="Tell us a bit about your situation and what you're hoping to accomplish..."></textarea>
+              </div>
+              <div class="form-success" id="contact-success">
+                Thank you! We'll be in touch within 1 business day.
+              </div>
+              <!-- Replace with Formspree endpoint -->
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-padding" style="background: var(--color-linen);">
+    <div class="container">
+      <div class="faq-section">
+        <div class="section-header slide-up">
+          <p class="section-label">Common Questions</p>
+          <h2>About our service.</h2>
+        </div>
+        <div class="faq-list" x-data="{ open: null }">
+          <div class="accordion-item" :class="{ open: open === 0 }">
+            <button class="accordion-trigger" @click="open = open === 0 ? null : 0">
+              What exactly is charitablegiving.ca?
+              <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                charitablegiving.ca is an independent educational platform for Canadians who want to give with intention. We provide information about charitable giving strategies, a directory of verified Canadian charities, and guidance for both individual donors and the financial advisors who serve them. We are not a registered charity and we do not process donations.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" :class="{ open: open === 1 }">
+            <button class="accordion-trigger" @click="open = open === 1 ? null : 1">
+              Is the consultation truly free?
+              <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                Yes. Our 30-minute introductory conversation is completely free. There are no hidden fees, no product sales, and no pressure. We genuinely want to help Canadians give better — and the conversation is how we figure out how to do that for you.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" :class="{ open: open === 2 }">
+            <button class="accordion-trigger" @click="open = open === 2 ? null : 2">
+              Do you give financial or tax advice?
+              <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                No. Our content is educational in nature and does not constitute financial, legal, or tax advice. For advice specific to your situation, you should always consult a qualified professional — your accountant, financial advisor, or estate lawyer. We're happy to point you toward the right questions to ask them.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" :class="{ open: open === 3 }">
+            <button class="accordion-trigger" @click="open = open === 3 ? null : 3">
+              Can my financial advisor contact you on my behalf?
+              <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                Absolutely. We work with financial advisors, estate lawyers, and accountants who want to offer better charitable giving guidance to their clients. If your advisor would like to connect, have them reach out via the <a href="advisors.html">advisor inquiry form</a>.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" :class="{ open: open === 4 }">
+            <button class="accordion-trigger" @click="open = open === 4 ? null : 4">
+              How is charitablegiving.ca different from a charity itself?
+              <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                charitablegiving.ca is an educational platform — not a charity. We don't accept donations, issue tax receipts, or fund programs directly. We help donors understand their options, find the right organizations, and structure their giving more effectively. Think of us as a guide, not a destination.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" :class="{ open: open === 5 }">
+            <button class="accordion-trigger" @click="open = open === 5 ? null : 5">
+              What happens after I book a call?
+              <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-content-inner">
+                You'll receive a confirmation email with a calendar invite and a video or phone call link. We'll ask you to share a little about your giving goals in advance so we can make the most of the 30 minutes. After the call, we'll follow up with any specific resources or referrals that are relevant to your situation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="charitablegiving.ca" height="48" class="footer-logo">
+          <p class="footer-tagline">From your first gift to your greatest legacy.</p>
+        </div>
+        <div class="footer-nav-columns">
+          <div class="footer-col"><h4>Giving Guide</h4><ul><li><a href="give.html#getting-started">Getting Started</a></li><li><a href="give.html#strategies">Giving Strategies</a></li><li><a href="give.html#tax">Tax Benefits</a></li><li><a href="give.html#legacy">Legacy Giving</a></li></ul></div>
+          <div class="footer-col"><h4>Find a Charity</h4><ul><li><a href="find.html">Charity Finder</a></li><li><a href="find.html#directory">Full Directory</a></li><li><a href="find.html#mylist">My Saved List</a></li></ul></div>
+          <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">All Articles</a></li><li><a href="learn.html?filter=beginner">Beginner Guides</a></li><li><a href="learn.html?filter=tax">Tax &amp; Planning</a></li></ul></div>
+          <div class="footer-col"><h4>For Advisors</h4><ul><li><a href="advisors.html">How It Works</a></li><li><a href="advisors.html#resources">Planning Tools</a></li><li><a href="contact.html">Book a Call</a></li></ul></div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-disclaimer">charitablegiving.ca is an independent educational platform and is not a registered charity. Content is for informational purposes only and does not constitute financial, legal, or tax advice. Always consult a qualified professional.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2025 charitablegiving.ca | <a href="#">Privacy Policy</a> &middot; <a href="#">Terms of Use</a> &middot; <a href="advisors.html">Advisor Inquiry</a></p>
+        <p class="footer-maple">Built with care in Canada 🍁</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/charities.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/contact.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

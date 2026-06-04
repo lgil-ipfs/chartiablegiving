@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Charity — charitablegiving.ca</title>
+  <meta name="description" content="Find the right Canadian charity for your values. Search 100+ vetted organizations by cause, province, and size.">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/find.css">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="charitablegiving.ca" height="40"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="give.html">Give</a></li>
+        <li><a href="find.html">Find a Charity</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="advisors.html">For Advisors</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a Call</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <button class="nav-mobile-close" id="nav-mobile-close"><i data-lucide="x"></i></button>
+      <ul class="nav-mobile-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="give.html">Give</a></li>
+        <li><a href="find.html">Find a Charity</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="advisors.html">For Advisors</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="find-hero">
+    <div class="container">
+      <div class="find-hero-content">
+        <p class="hero-eyebrow">Charity Finder</p>
+        <h1>Find your cause.</h1>
+        <p>Use our guided questionnaire to match your values with a verified Canadian charity — or browse the full directory below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Part A: Questionnaire Wizard -->
+  <section class="section-padding wizard-section" style="background: var(--color-cream);">
+    <div class="container">
+      <div class="wizard-header slide-up">
+        <h2>Find the right fit in 6 steps.</h2>
+        <p>Answer a few questions and we'll match you with charities that reflect your giving priorities.</p>
+      </div>
+
+      <div class="wizard" id="wizard">
+        <!-- Progress bar -->
+        <div class="wizard-progress">
+          <div class="wizard-progress-bar" id="wizard-progress-bar"></div>
+        </div>
+        <div class="wizard-step-label" id="wizard-step-label">Step 1 of 6</div>
+
+        <!-- Step 1: Causes -->
+        <div class="wizard-step active" data-step="1">
+          <h3>Which causes matter most to you?</h3>
+          <p class="step-sub">Select all that apply.</p>
+          <div class="cause-grid" id="cause-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Step 2: Geography -->
+        <div class="wizard-step" data-step="2">
+          <h3>Where do you want your gift to have an impact?</h3>
+          <div class="option-grid">
+            <button class="option-btn" data-value="any">Anywhere in Canada</button>
+            <button class="option-btn" data-value="ON">Ontario</button>
+            <button class="option-btn" data-value="BC">British Columbia</button>
+            <button class="option-btn" data-value="AB">Alberta</button>
+            <button class="option-btn" data-value="QC">Quebec</button>
+            <button class="option-btn" data-value="MB">Manitoba</button>
+            <button class="option-btn" data-value="SK">Saskatchewan</button>
+            <button class="option-btn" data-value="NS">Nova Scotia</button>
+            <button class="option-btn" data-value="NB">New Brunswick</button>
+            <button class="option-btn" data-value="international">Internationally</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Size -->
+        <div class="wizard-step" data-step="3">
+          <h3>What size of organization do you prefer?</h3>
+          <div class="option-grid">
+            <button class="option-btn" data-value="any">
+              <strong>Any size</strong>
+              <span>I don't have a preference</span>
+            </button>
+            <button class="option-btn" data-value="large">
+              <strong>Large</strong>
+              <span>National reach and infrastructure</span>
+            </button>
+            <button class="option-btn" data-value="medium">
+              <strong>Mid-size</strong>
+              <span>Regional impact, established programs</span>
+            </button>
+            <button class="option-btn" data-value="small">
+              <strong>Small &amp; local</strong>
+              <span>Grassroots, community-focused</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4: Transparency -->
+        <div class="wizard-step" data-step="4">
+          <h3>How important is financial transparency to you?</h3>
+          <p class="step-sub">1 = Not a priority &nbsp;|&nbsp; 5 = Very important</p>
+          <div class="slider-wrap">
+            <input type="range" min="1" max="5" value="3" class="transparency-slider" id="transparency-slider">
+            <div class="slider-labels">
+              <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+            <p class="slider-value" id="slider-value">3 — Moderately important</p>
+          </div>
+        </div>
+
+        <!-- Step 5: How to Give -->
+        <div class="wizard-step" data-step="5">
+          <h3>How do you prefer to give?</h3>
+          <p class="step-sub">Select all that apply.</p>
+          <div class="option-grid">
+            <button class="option-btn multi" data-value="one-time">One-time donation</button>
+            <button class="option-btn multi" data-value="monthly">Monthly recurring gift</button>
+            <button class="option-btn multi" data-value="securities">Gift of securities</button>
+            <button class="option-btn multi" data-value="estate">Estate / bequest</button>
+            <button class="option-btn multi" data-value="volunteer">Volunteer time</button>
+            <button class="option-btn multi" data-value="workplace">Workplace giving</button>
+          </div>
+        </div>
+
+        <!-- Step 6: Results -->
+        <div class="wizard-step" data-step="6">
+          <h3>Your matched charities</h3>
+          <p class="step-sub">Based on your answers, here are organizations we recommend.</p>
+          <div class="wizard-results" id="wizard-results">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="wizard-nav">
+          <button class="btn btn-outline" id="wizard-back" style="display:none;">Back</button>
+          <button class="btn btn-primary" id="wizard-next">Next</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,20 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="var(--color-linen)"/>
+    </svg>
+  </div>
+
+  <!-- Part B: Full Directory -->
+  <section class="section-padding" id="directory" style="background: var(--color-linen);">
+    <div class="container">
+      <div class="section-header slide-up">
+        <p class="section-label">Full Directory</p>
+        <h2>Browse all charities.</h2>
+        <p>Search and filter our complete directory of verified Canadian charities. All CRA registration numbers verified.</p>
+      </div>
+
+      <div class="directory-layout">
+        <!-- Filters Sidebar -->
+        <aside class="filter-sidebar">
+          <h4>Filter</h4>
+          <div class="filter-group">
+            <label class="form-label">Search</label>
+            <div class="search-wrap">
+              <i data-lucide="search" class="search-icon"></i>
+              <input type="text" class="form-control search-input" id="dir-search" placeholder="Charity name, cause, tag...">
+            </div>
+          </div>
+          <div class="filter-group">
+            <label class="form-label">Category</label>
+            <select class="form-control" id="filter-category">
+              <option value="">All categories</option>
+              <option>Health &amp; Medical</option>
+              <option>Children &amp; Youth</option>
+              <option>Mental Health</option>
+              <option>Environment &amp; Climate</option>
+              <option>Animal Welfare</option>
+              <option>Education &amp; Literacy</option>
+              <option>Indigenous Communities</option>
+              <option>Poverty &amp; Homelessness</option>
+              <option>International Aid</option>
+              <option>Arts &amp; Culture</option>
+              <option>Food Security</option>
+              <option>Veterans &amp; Military</option>
+              <option>Seniors &amp; Aging</option>
+              <option>Disability</option>
+              <option>Faith &amp; Spirituality</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="form-label">Province</label>
+            <select class="form-control" id="filter-province">
+              <option value="">All provinces</option>
+              <option value="BC">British Columbia</option>
+              <option value="AB">Alberta</option>
+              <option value="SK">Saskatchewan</option>
+              <option value="MB">Manitoba</option>
+              <option value="ON">Ontario</option>
+              <option value="QC">Quebec</option>
+              <option value="NS">Nova Scotia</option>
+              <option value="NB">New Brunswick</option>
+              <option value="PE">Prince Edward Island</option>
+              <option value="NL">Newfoundland &amp; Labrador</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="form-label">Size</label>
+            <select class="form-control" id="filter-size">
+              <option value="">All sizes</option>
+              <option value="large">Large</option>
+              <option value="medium">Mid-size</option>
+              <option value="small">Small</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="form-label">Sort by</label>
+            <select class="form-control" id="filter-sort">
+              <option value="">Default</option>
+              <option value="name">Name A–Z</option>
+              <option value="featured">Featured first</option>
+            </select>
+          </div>
+          <button class="btn btn-ghost" id="clear-filters">Clear filters</button>
+        </aside>
+
+        <!-- Results -->
+        <div class="directory-results">
+          <div class="results-header">
+            <span id="results-count" class="results-count">Loading...</span>
+          </div>
+          <div class="charity-grid" id="charity-grid">
+            <!-- Populated by JS -->
+          </div>
+          <div class="pagination" id="pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My List Panel -->
+  <div class="mylist-panel" id="mylist-panel">
+    <div class="mylist-header">
+      <strong>My Saved List (<span class="list-count">0</span>)</strong>
+      <button class="btn btn-ghost btn-sm" id="mylist-toggle">View</button>
+    </div>
+    <div class="mylist-content" id="mylist-content" style="display:none;">
+      <div id="mylist-items"></div>
+      <a href="contact.html" class="btn btn-primary btn-sm" style="margin-top:12px;">Discuss with an Advisor</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="charitablegiving.ca" height="48" class="footer-logo">
+          <p class="footer-tagline">From your first gift to your greatest legacy.</p>
+        </div>
+        <div class="footer-nav-columns">
+          <div class="footer-col"><h4>Giving Guide</h4><ul><li><a href="give.html#getting-started">Getting Started</a></li><li><a href="give.html#strategies">Giving Strategies</a></li><li><a href="give.html#tax">Tax Benefits</a></li><li><a href="give.html#legacy">Legacy Giving</a></li></ul></div>
+          <div class="footer-col"><h4>Find a Charity</h4><ul><li><a href="find.html">Charity Finder</a></li><li><a href="find.html#directory">Full Directory</a></li><li><a href="find.html#mylist">My Saved List</a></li></ul></div>
+          <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">All Articles</a></li><li><a href="learn.html?filter=beginner">Beginner Guides</a></li><li><a href="learn.html?filter=tax">Tax &amp; Planning</a></li></ul></div>
+          <div class="footer-col"><h4>For Advisors</h4><ul><li><a href="advisors.html">How It Works</a></li><li><a href="advisors.html#resources">Planning Tools</a></li><li><a href="contact.html">Book a Call</a></li></ul></div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-disclaimer">charitablegiving.ca is an independent educational platform and is not a registered charity. Content is for informational purposes only and does not constitute financial, legal, or tax advice. Always consult a qualified professional.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2025 charitablegiving.ca | <a href="#">Privacy Policy</a> &middot; <a href="#">Terms of Use</a> &middot; <a href="advisors.html">Advisor Inquiry</a></p>
+        <p class="footer-maple">Built with care in Canada 🍁</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/charities.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/find.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

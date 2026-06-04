@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article — charitablegiving.ca</title>
+  <meta name="description" content="Plain-language articles on charitable giving in Canada.">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/article.css">
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="charitablegiving.ca" height="40"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="give.html">Give</a></li>
+        <li><a href="find.html">Find a Charity</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="advisors.html">For Advisors</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a Call</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu"><i data-lucide="menu"></i></button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <button class="nav-mobile-close" id="nav-mobile-close"><i data-lucide="x"></i></button>
+      <ul class="nav-mobile-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="give.html">Give</a></li>
+        <li><a href="find.html">Find a Charity</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="advisors.html">For Advisors</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header" id="article-header">
+    <div class="container">
+      <div class="article-breadcrumb">
+        <a href="learn.html">← All Articles</a>
+      </div>
+      <div class="article-badges" id="article-badges"></div>
+      <h1 class="article-title" id="article-title">Loading...</h1>
+      <p class="article-deck" id="article-deck"></p>
+      <div class="article-meta" id="article-meta"></div>
+      <div class="article-rule"></div>
+    </div>
+  </header>
+
+  <!-- Article Body + Sidebar -->
+  <main class="article-main">
+    <div class="container">
+      <div class="article-layout">
+        <!-- Content -->
+        <article class="article-body" id="article-body">
+          <div class="article-loading">
+            <p>Loading article...</p>
+          </div>
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="toc-card" id="toc-card">
+            <h4>In This Article</h4>
+            <nav class="toc-nav" id="toc-nav"></nav>
+          </div>
+          <div class="sidebar-cta card">
+            <div class="card-body">
+              <h4>Have a giving question?</h4>
+              <p>Book a free 30-minute call with our team. We'll help you give smarter.</p>
+              <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:12px;">Book a Free Call</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Below Article -->
+      <div class="article-footer-area">
+        <div class="disclaimer-box" style="margin-bottom:32px;">
+          <strong>Disclaimer:</strong> This article is for informational purposes only and does not constitute financial, legal, or tax advice. Always consult a qualified professional before making financial or charitable giving decisions.
+        </div>
+
+        <div class="article-share">
+          <strong>Share this article:</strong>
+          <button class="btn btn-outline btn-sm" id="copy-link-btn">
+            <i data-lucide="link"></i> Copy Link
+          </button>
+          <span id="copy-confirm" style="display:none;font-size:0.85rem;color:var(--color-green)">Link copied!</span>
+        </div>
+
+        <div class="related-articles" id="related-articles">
+          <h3>Related Articles</h3>
+          <div class="related-grid" id="related-grid"></div>
+        </div>
+
+        <div class="article-cta-banner">
+          <div>
+            <h3>Ready to put this into practice?</h3>
+            <p>Book a free conversation with our team. We'll help you apply these strategies to your specific situation.</p>
+          </div>
+          <a href="contact.html" class="btn btn-primary btn-lg">Book a Free Call</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="charitablegiving.ca" height="48" class="footer-logo">
+          <p class="footer-tagline">From your first gift to your greatest legacy.</p>
+        </div>
+        <div class="footer-nav-columns">
+          <div class="footer-col"><h4>Giving Guide</h4><ul><li><a href="give.html#getting-started">Getting Started</a></li><li><a href="give.html#strategies">Giving Strategies</a></li><li><a href="give.html#tax">Tax Benefits</a></li><li><a href="give.html#legacy">Legacy Giving</a></li></ul></div>
+          <div class="footer-col"><h4>Find a Charity</h4><ul><li><a href="find.html">Charity Finder</a></li><li><a href="find.html#directory">Full Directory</a></li><li><a href="find.html#mylist">My Saved List</a></li></ul></div>
+          <div class="footer-col"><h4>Learn</h4><ul><li><a href="learn.html">All Articles</a></li><li><a href="learn.html?filter=beginner">Beginner Guides</a></li><li><a href="learn.html?filter=tax">Tax &amp; Planning</a></li></ul></div>
+          <div class="footer-col"><h4>For Advisors</h4><ul><li><a href="advisors.html">How It Works</a></li><li><a href="advisors.html#resources">Planning Tools</a></li><li><a href="contact.html">Book a Call</a></li></ul></div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-disclaimer">charitablegiving.ca is an independent educational platform and is not a registered charity. Content is for informational purposes only and does not constitute financial, legal, or tax advice. Always consult a qualified professional.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2025 charitablegiving.ca | <a href="#">Privacy Policy</a> &middot; <a href="#">Terms of Use</a> &middot; <a href="advisors.html">Advisor Inquiry</a></p>
+        <p class="footer-maple">Built with care in Canada 🍁</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/charities.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/article.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

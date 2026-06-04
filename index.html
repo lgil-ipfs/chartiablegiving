@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>charitablegiving.ca — From your first gift to your greatest legacy</title>
+  <meta name="description" content="Canada's trusted guide to charitable giving. Find verified charities, learn smart giving strategies, and maximize your impact.">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="charitablegiving.ca" height="40">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="give.html">Give</a></li>
+        <li><a href="find.html">Find a Charity</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="advisors.html">For Advisors</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a Call</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <button class="nav-mobile-close" id="nav-mobile-close">
+        <i data-lucide="x"></i>
+      </button>
+      <ul class="nav-mobile-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="give.html">Give</a></li>
+        <li><a href="find.html">Find a Charity</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="advisors.html">For Advisors</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-eyebrow slide-up">Canada's Guide to Charitable Giving</p>
+      <h1 class="hero-headline slide-up">Every gift changes <em>something.</em></h1>
+      <p class="hero-sub slide-up">Whether it's your first donation or your greatest legacy, we'll help you give with intention.</p>
+      <div class="hero-ctas slide-up">
+        <a href="find.html" class="btn btn-primary btn-lg">Find a Charity</a>
+        <a href="give.html" class="btn btn-outline-white btn-lg">Explore the Guide</a>
+      </div>
+    </div>
+    <a href="#journey" class="hero-chevron" aria-label="Scroll down">
+      <i data-lucide="chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- Wave: hero → journey -->
+  <div class="wave-divider wave-teal-on-navy">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#E6F5F4"/>
+    </svg>
+  </div>
+
+  <!-- Giving Journey -->
+  <section class="section-padding" id="journey" style="background: var(--color-linen);">
+    <div class="container">
+      <div class="section-header text-center slide-up">
+        <p class="section-label">Where are you on your journey?</p>
+        <h2>Giving looks different at every stage.</h2>
+        <p>Whether you're making your first donation or structuring a legacy gift, we have resources built for where you are right now.</p>
+      </div>
+      <div class="grid-3">
+        <a href="give.html#getting-started" class="journey-card card slide-up">
+          <div class="journey-icon journey-icon--teal">
+            <i data-lucide="seedling"></i>
+          </div>
+          <h3>Just Getting Started</h3>
+          <p>Learn how to find a cause, verify a charity, and make your first gift with confidence. No experience required.</p>
+          <span class="journey-link">Start here <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a href="give.html#strategies" class="journey-card card slide-up">
+          <div class="journey-icon journey-icon--green">
+            <i data-lucide="trending-up"></i>
+          </div>
+          <h3>Building a Practice</h3>
+          <p>Maximize your impact with donor-advised funds, securities donations, employer matching, and smarter tax strategies.</p>
+          <span class="journey-link">Explore strategies <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a href="give.html#legacy" class="journey-card card slide-up">
+          <div class="journey-icon journey-icon--navy">
+            <i data-lucide="heart-handshake"></i>
+          </div>
+          <h3>Planning Your Legacy</h3>
+          <p>Bequests, RRSP beneficiary designations, and estate gifts — tools to ensure your values live beyond your lifetime.</p>
+          <span class="journey-link">Plan ahead <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C480,60 960,0 1440,40 L1440,60 L0,60 Z" fill="var(--color-teal-pale)"/>
+    </svg>
+  </div>
+
+  <!-- Charity Finder CTA -->
+  <section class="section-padding finder-cta-section" style="background: var(--color-teal-pale);">
+    <div class="container">
+      <div class="finder-cta fade-in">
+        <div class="finder-cta-text">
+          <p class="section-label">86,000+ Registered Charities in Canada</p>
+          <h2>Not sure where to give?</h2>
+          <p>Use our guided questionnaire to find organizations that match your values, geography, and giving style — in under two minutes.</p>
+        </div>
+        <a href="find.html" class="btn btn-primary btn-lg">Find Your Charity</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C480,0 960,60 1440,20 L1440,60 L0,60 Z" fill="var(--color-cream)"/>
+    </svg>
+  </div>
+
+  <!-- Featured Articles -->
+  <section class="section-padding" id="articles" style="background: var(--color-cream);">
+    <div class="container">
+      <div class="section-header slide-up">
+        <p class="section-label">The Giving Guide</p>
+        <h2>Learn to give better.</h2>
+        <p>Plain-language articles on tax planning, giving strategies, and legacy giving — written for real Canadians, not accountants.</p>
+      </div>
+      <div class="grid-3" id="featured-articles-grid">
+        <!-- Populated by js/index.js -->
+        <div class="article-card-skeleton card"></div>
+        <div class="article-card-skeleton card"></div>
+        <div class="article-card-skeleton card"></div>
+      </div>
+      <div class="section-footer-cta">
+        <a href="learn.html" class="btn btn-secondary">Browse All Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,20 C360,60 1080,0 1440,40 L1440,60 L0,60 Z" fill="var(--color-navy)"/>
+    </svg>
+  </div>
+
+  <!-- By the Numbers -->
+  <section class="section-padding numbers-section" style="background: var(--color-navy);">
+    <div class="container">
+      <div class="section-header text-center slide-up" style="color: white;">
+        <p class="section-label" style="color: var(--color-teal-light);">Canada's Giving Landscape</p>
+        <h2 style="color: white;">Generosity at scale.</h2>
+      </div>
+      <div class="grid-4 numbers-grid">
+        <div class="number-stat slide-up">
+          <span class="number-value text-green" data-counter="86000">0</span>
+          <span class="number-suffix">+</span>
+          <p class="number-label">Registered charities in Canada</p>
+        </div>
+        <div class="number-stat slide-up">
+          <span class="number-prefix">$</span>
+          <span class="number-value text-green" data-counter="17.1">0</span>
+          <span class="number-suffix">B</span>
+          <p class="number-label">Donated to charity annually</p>
+        </div>
+        <div class="number-stat slide-up">
+          <span class="number-value text-green" data-counter="29">0</span>
+          <span class="number-suffix">%</span>
+          <p class="number-label">Federal tax credit on gifts over $200</p>
+        </div>
+        <div class="number-stat slide-up">
+          <span class="number-value text-green" data-counter="1">0</span>
+          <span class="number-suffix"> in 3</span>
+          <p class="number-label">Canadians volunteer each year</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C480,60 960,0 1440,50 L1440,60 L0,60 Z" fill="var(--color-linen)"/>
+    </svg>
+  </div>
+
+  <!-- For Advisors -->
+  <section class="section-padding advisors-section" style="background: var(--color-linen);">
+    <div class="container">
+      <div class="advisors-split">
+        <div class="advisors-text slide-up">
+          <p class="section-label">For Financial Advisors</p>
+          <h2>Help your clients give with intention.</h2>
+          <p>Your clients are asking about charitable giving. We help you have that conversation — with plain-language resources, tax planning frameworks, and a simple referral process.</p>
+          <ul class="advisors-list">
+            <li><i data-lucide="check-circle"></i> Province-by-province tax credit breakdowns</li>
+            <li><i data-lucide="check-circle"></i> Securities donation step-by-step guides</li>
+            <li><i data-lucide="check-circle"></i> DAF vs. private foundation comparisons</li>
+            <li><i data-lucide="check-circle"></i> Legacy giving and estate planning frameworks</li>
+          </ul>
+          <a href="advisors.html" class="btn btn-secondary">Advisor Resources</a>
+        </div>
+        <div class="advisors-image slide-up">
+          <div class="advisors-card-stack">
+            <div class="advisor-stat-card">
+              <span class="advisor-stat-icon"><i data-lucide="bar-chart-2"></i></span>
+              <div>
+                <strong>29–50%</strong>
+                <p>Combined tax savings on gifts over $200 (province-dependent)</p>
+              </div>
+            </div>
+            <div class="advisor-stat-card">
+              <span class="advisor-stat-icon"><i data-lucide="trending-up"></i></span>
+              <div>
+                <strong>$0 capital gains</strong>
+                <p>When appreciated securities are donated directly</p>
+              </div>
+            </div>
+            <div class="advisor-stat-card">
+              <span class="advisor-stat-icon"><i data-lucide="shield-check"></i></span>
+              <div>
+                <strong>100% income offset</strong>
+                <p>Charitable donations on final returns in the year of passing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C360,0 1080,60 1440,20 L1440,60 L0,60 Z" fill="var(--color-navy-dark)"/>
+    </svg>
+  </div>
+
+  <!-- Book a Conversation -->
+  <section class="section-padding cta-banner" style="background: var(--color-navy-dark);">
+    <div class="container">
+      <div class="cta-banner-inner fade-in">
+        <div>
+          <h2 style="color: white;">Not sure where to start?</h2>
+          <p style="color: rgba(255,255,255,0.7);">Book a free 30-minute conversation. We'll help you find a giving strategy that fits your values, your finances, and your life.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary btn-lg">Book a Free Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="charitablegiving.ca" height="48" class="footer-logo">
+          <p class="footer-tagline">From your first gift to your greatest legacy.</p>
+        </div>
+        <div class="footer-nav-columns">
+          <div class="footer-col">
+            <h4>Giving Guide</h4>
+            <ul>
+              <li><a href="give.html#getting-started">Getting Started</a></li>
+              <li><a href="give.html#strategies">Giving Strategies</a></li>
+              <li><a href="give.html#tax">Tax Benefits</a></li>
+              <li><a href="give.html#legacy">Legacy Giving</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Find a Charity</h4>
+            <ul>
+              <li><a href="find.html">Charity Finder</a></li>
+              <li><a href="find.html#directory">Full Directory</a></li>
+              <li><a href="find.html#mylist">My Saved List</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Learn</h4>
+            <ul>
+              <li><a href="learn.html">All Articles</a></li>
+              <li><a href="learn.html?filter=beginner">Beginner Guides</a></li>
+              <li><a href="learn.html?filter=tax">Tax &amp; Planning</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>For Advisors</h4>
+            <ul>
+              <li><a href="advisors.html">How It Works</a></li>
+              <li><a href="advisors.html#resources">Planning Tools</a></li>
+              <li><a href="contact.html">Book a Call</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-disclaimer">charitablegiving.ca is an independent educational platform and is not a registered charity. Content is for informational purposes only and does not constitute financial, legal, or tax advice. Always consult a qualified professional.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2025 charitablegiving.ca | <a href="#">Privacy Policy</a> &middot; <a href="#">Terms of Use</a> &middot; <a href="advisors.html">Advisor Inquiry</a></p>
+        <p class="footer-maple">Built with care in Canada 🍁</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/charities.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/index.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
