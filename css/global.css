@@ -113,7 +113,7 @@ p { line-height: 1.75; }
   flex-shrink: 0;
 }
 .nav-logo img {
-  height: 44px;
+  height: 58px;
   width: auto;
   display: block;
   /* White version on dark nav — logo colours show on light nav */
@@ -122,7 +122,7 @@ p { line-height: 1.75; }
 }
 .site-nav.scrolled .nav-logo img {
   filter: none;
-  height: 40px;
+  height: 52px;
 }
 .nav-links {
   display: flex;
