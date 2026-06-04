@@ -111,21 +111,18 @@ p { line-height: 1.75; }
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: var(--radius-md);
-  padding: 8px 16px;
-  transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
 }
 .nav-logo img {
-  height: 42px;
+  height: 44px;
   width: auto;
   display: block;
+  /* White version on dark nav — logo colours show on light nav */
+  filter: brightness(0) invert(1);
+  transition: filter var(--transition), height var(--transition);
 }
-.site-nav.scrolled .nav-logo {
-  background: transparent;
-  padding: 4px 0;
-  box-shadow: none;
+.site-nav.scrolled .nav-logo img {
+  filter: none;
+  height: 40px;
 }
 .nav-links {
   display: flex;
@@ -433,12 +430,10 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
 }
 .footer-brand { display: flex; flex-direction: column; gap: 16px; }
 .footer-logo {
-  height: 52px;
+  height: 48px;
   width: auto;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: var(--radius-md);
-  padding: 8px 16px;
   display: block;
+  filter: brightness(0) invert(1);
 }
 .footer-tagline {
   color: rgba(255,255,255,0.65);
