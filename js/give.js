@@ -95,7 +95,7 @@ function updateTaxChart(amount, federal, provincial, afterTax, province) {
     labels: ['Federal Credit', `${provinceNames[province]} Credit`, 'Your After-Tax Cost'],
     datasets: [{
       data: [Math.round(federal), Math.round(provincial), Math.round(afterTax)],
-      backgroundColor: ['#2A9D8F', '#4DC4B8', '#E6F5F4'],
+      backgroundColor: ['#1A6B5A', '#E8A020', '#EAF3F0'],
       borderRadius: 8,
       borderWidth: 0,
     }]
@@ -123,9 +123,9 @@ function updateTaxChart(amount, federal, provincial, afterTax, province) {
             beginAtZero: true,
             ticks: {
               callback: val => `$${val.toLocaleString()}`,
-              font: { family: 'DM Mono, monospace', size: 11 }
+              font: { family: 'DM Sans, sans-serif', size: 11 }
             },
-            grid: { color: '#E6F5F4' }
+            grid: { color: '#EAF3F0' }
           },
           x: {
             ticks: { font: { family: 'DM Sans, sans-serif', size: 12 } },

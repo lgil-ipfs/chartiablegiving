@@ -1,39 +1,58 @@
 /* ============================================================
    global.css — charitablegiving.ca Design System
+   Built on the same design language as studentfinancial.ca:
+   DM Sans + Fraunces, cream/green/amber/coral palette, pill
+   buttons, sticky cream nav, light footer.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap');
 
 /* ── Custom Properties ── */
 :root {
-  --color-navy: #1B2F6E;
-  --color-navy-dark: #111E4A;
-  --color-navy-light: #2D4494;
-  --color-teal: #2A9D8F;
-  --color-teal-light: #4DC4B8;
-  --color-teal-pale: #E6F5F4;
-  --color-green: #5BAD4E;
-  --color-green-light: #82C977;
-  --color-green-pale: #EDF7EB;
-  --color-cream: #FAF7F2;
-  --color-linen: #F0F4F8;
-  --color-ink: #1A1A1A;
-  --color-muted: #6B7280;
-  --color-white: #FFFFFF;
-  --color-border: #D1DCE8;
-  --color-success: #3A9B30;
-  --color-error: #9B2226;
-  --font-display: 'Playfair Display', Georgia, serif;
+  /* Core palette — shared with studentfinancial.ca */
+  --primary: #1A6B5A;
+  --primary-light: #248c77;
+  --secondary: #E8A020;
+  --secondary-light: #f5b94d;
+  --accent: #E8614A;
+  --bg: #FAF7F2;
+  --text: #2D2D2D;
+  --muted: #7A8A85;
+  --white: #FFFFFF;
+  --shadow: 0 4px 20px rgba(26, 107, 90, 0.08);
+  --shadow-hover: 0 10px 30px rgba(26, 107, 90, 0.12);
+  --radius: 16px;
+  --transition: 0.25s ease;
+
+  /* charitablegiving.ca's richer token set, remapped onto the shared
+     palette above so every existing page keeps working unchanged. */
+  --color-navy: var(--primary);
+  --color-navy-dark: #123F35;
+  --color-navy-light: var(--primary-light);
+  --color-teal: var(--primary-light);
+  --color-teal-light: #4DA695;
+  --color-teal-pale: #EAF3F0;
+  --color-green: var(--secondary);
+  --color-green-light: var(--secondary-light);
+  --color-green-pale: #FBF1DD;
+  --color-cream: var(--bg);
+  --color-linen: var(--white);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-white: var(--white);
+  --color-border: rgba(26, 107, 90, 0.15);
+  --color-success: var(--primary);
+  --color-error: #C0392B;
+  --font-display: 'Fraunces', serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
-  --font-mono: 'DM Mono', monospace;
-  --radius-sm: 6px;
+  --font-mono: var(--font-body);
+  --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
-  --transition: 0.25s ease;
+  --shadow-sm: var(--shadow);
+  --shadow-md: var(--shadow-hover);
+  --shadow-lg: 0 20px 60px rgba(26, 107, 90, 0.18);
   --max-width: 1200px;
 }
 
@@ -43,13 +62,13 @@ html { scroll-behavior: smooth; font-size: 16px; }
 body {
   font-family: var(--font-body);
   color: var(--color-ink);
-  background: var(--color-white);
+  background: var(--color-cream);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 body.menu-open { overflow: hidden; }
 img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
+a { color: inherit; text-decoration: none; transition: var(--transition); }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 input, textarea, select { font-family: inherit; }
@@ -57,6 +76,7 @@ input, textarea, select { font-family: inherit; }
 /* ── Typography ── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
+  font-weight: 600;
   line-height: 1.2;
   color: var(--color-ink);
 }
@@ -66,7 +86,7 @@ h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 700; }
 h4 { font-size: 1.1rem; font-weight: 700; }
 p { line-height: 1.75; }
 .text-muted { color: var(--color-muted); }
-.text-green { color: var(--color-green); }
+.text-green { color: var(--primary); }
 .text-teal { color: var(--color-teal); }
 .text-white { color: var(--color-white); }
 .text-navy { color: var(--color-navy); }
@@ -78,34 +98,27 @@ p { line-height: 1.75; }
   margin: 0 auto;
   padding: 0 24px;
 }
-.section-padding { padding: 80px 0; }
-@media (max-width: 768px) { .section-padding { padding: 56px 0; } }
+.section-padding { padding: 100px 0; }
+@media (max-width: 768px) { .section-padding { padding: 60px 0; } }
 
-/* ── Navigation ── */
+/* ── Navigation ──
+   Sticky, solid cream bar — same treatment as studentfinancial.ca. */
 .site-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  background-color: var(--bg);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
   z-index: 1000;
-  background: transparent;
-  transition: background var(--transition), box-shadow var(--transition);
-}
-.site-nav.scrolled {
-  background: var(--color-white);
-  box-shadow: var(--shadow-md);
-}
-.site-nav.scrolled .nav-links a,
-.site-nav.scrolled .nav-logo-text {
-  color: var(--color-navy);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 .nav-container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
-  height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
 }
 .nav-logo {
   display: flex;
@@ -113,60 +126,44 @@ p { line-height: 1.75; }
   flex-shrink: 0;
 }
 .nav-logo img {
-  height: 72px;
+  height: 44px;
   width: auto;
   display: block;
-  /* White version on dark nav — logo colours show on light nav */
-  filter: brightness(0) invert(1);
-  transition: filter var(--transition), height var(--transition);
-}
-.site-nav.scrolled .nav-logo img {
-  filter: none;
-  height: 64px;
 }
 .nav-links {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
+  margin: 0 auto;
   gap: 32px;
 }
 .nav-links a {
   font-size: 0.925rem;
   font-weight: 500;
-  color: var(--color-white);
-  transition: color var(--transition);
+  color: var(--text);
   position: relative;
 }
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px; left: 0; right: 0;
-  height: 2px;
-  background: var(--color-green);
-  transform: scaleX(0);
-  transition: transform var(--transition);
-}
-.nav-links a:hover::after,
-.nav-links a.active::after { transform: scaleX(1); }
-.nav-links a:hover { color: var(--color-green-light); }
-.nav-links a.active { color: var(--color-green); }
-.site-nav.scrolled .nav-links a { color: var(--color-navy); }
-.site-nav.scrolled .nav-links a:hover { color: var(--color-teal); }
-.site-nav.scrolled .nav-links a.active { color: var(--color-teal); }
-.nav-cta { margin-left: 8px; }
+.nav-links a:hover { color: var(--primary); }
+.nav-links a.active { color: var(--primary); font-weight: 700; }
+.nav-cta { flex-shrink: 0; }
 .nav-hamburger {
   display: none;
   align-items: center;
   justify-content: center;
   width: 44px; height: 44px;
   border-radius: var(--radius-sm);
-  color: var(--color-white);
+  color: var(--primary);
   transition: background var(--transition);
 }
-.nav-hamburger:hover { background: rgba(255,255,255,0.15); }
-.site-nav.scrolled .nav-hamburger { color: var(--color-navy); }
-.site-nav.scrolled .nav-hamburger:hover { background: var(--color-linen); }
+.nav-hamburger:hover { background: rgba(26, 107, 90, 0.08); }
 
-/* Mobile Nav Overlay */
+@media (max-width: 992px) {
+  .nav-links { display: none; }
+  .nav-container .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+}
+
+/* Mobile Nav Overlay — kept as charitablegiving's own full-screen treatment */
 .nav-mobile {
   position: fixed;
   inset: 0;
@@ -178,7 +175,7 @@ p { line-height: 1.75; }
   gap: 32px;
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 999;
+  z-index: 1001;
 }
 .nav-mobile.open { transform: translateX(0); }
 .nav-mobile-close {
@@ -204,76 +201,80 @@ p { line-height: 1.75; }
   transition: color var(--transition);
 }
 .nav-mobile-links a:hover,
-.nav-mobile-links a.active { color: var(--color-green-light); }
+.nav-mobile-links a.active { color: var(--secondary-light); }
 
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
-}
-
-/* ── Buttons ── */
+/* ── Buttons ──
+   Pill-shaped, same recipe as studentfinancial.ca. */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 28px;
-  border-radius: var(--radius-md);
+  padding: 14px 28px;
+  border-radius: 50px;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
-  transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition: var(--transition);
   cursor: pointer;
   border: 2px solid transparent;
   line-height: 1;
   white-space: nowrap;
+  text-align: center;
 }
-.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
-.btn:active { transform: translateY(0); }
 .btn-primary {
-  background: var(--color-green);
-  color: var(--color-white);
-  border-color: var(--color-green);
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
 }
-.btn-primary:hover { background: var(--color-green-light); border-color: var(--color-green-light); }
+.btn-primary:hover {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(26, 107, 90, 0.3);
+}
 .btn-secondary {
-  background: var(--color-teal);
-  color: var(--color-white);
-  border-color: var(--color-teal);
+  background: var(--secondary);
+  color: var(--text);
+  border-color: var(--secondary);
 }
-.btn-secondary:hover { background: var(--color-teal-light); border-color: var(--color-teal-light); }
+.btn-secondary:hover {
+  background: var(--secondary-light);
+  border-color: var(--secondary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(232, 160, 32, 0.3);
+}
 .btn-outline {
   background: transparent;
-  color: var(--color-navy);
-  border-color: var(--color-navy);
+  color: var(--primary);
+  border-color: var(--primary);
 }
-.btn-outline:hover { background: var(--color-navy); color: var(--color-white); }
+.btn-outline:hover { background: var(--primary); color: var(--white); }
 .btn-outline-white {
   background: transparent;
-  color: var(--color-white);
-  border-color: var(--color-white);
+  color: var(--white);
+  border-color: var(--white);
 }
-.btn-outline-white:hover { background: var(--color-white); color: var(--color-navy); }
+.btn-outline-white:hover { background: var(--white); color: var(--primary); }
 .btn-ghost {
   background: transparent;
-  color: var(--color-teal);
+  color: var(--primary);
   border-color: transparent;
   padding-left: 0; padding-right: 0;
 }
-.btn-ghost:hover { color: var(--color-teal-light); box-shadow: none; transform: none; }
+.btn-ghost:hover { color: var(--primary-light); box-shadow: none; transform: none; }
 .btn-sm { padding: 8px 18px; font-size: 0.85rem; }
 .btn-lg { padding: 16px 40px; font-size: 1.05rem; }
 
 /* ── Cards ── */
 .card {
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   border: 1px solid var(--color-border);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: var(--transition);
   overflow: hidden;
 }
-.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
 .card-body { padding: 24px; }
 .card-header { padding: 24px 24px 0; }
 .card-footer { padding: 0 24px 24px; }
@@ -292,11 +293,11 @@ p { line-height: 1.75; }
 }
 .badge-navy { background: var(--color-navy); color: var(--color-white); }
 .badge-teal { background: var(--color-teal-pale); color: var(--color-teal); }
-.badge-green { background: var(--color-green-pale); color: var(--color-success); }
+.badge-green { background: var(--color-green-pale); color: #B87A0F; }
 .badge-muted { background: var(--color-linen); color: var(--color-muted); }
 .badge-advanced { background: var(--color-navy); color: var(--color-white); }
 .badge-intermediate { background: var(--color-teal-pale); color: var(--color-teal); }
-.badge-beginner { background: var(--color-green-pale); color: var(--color-success); }
+.badge-beginner { background: var(--color-green-pale); color: #B87A0F; }
 
 /* ── Forms ── */
 .form-group { display: flex; flex-direction: column; gap: 6px; }
@@ -306,48 +307,39 @@ p { line-height: 1.75; }
   color: var(--color-ink);
 }
 .form-control {
-  padding: 12px 16px;
-  border: 2px solid var(--color-border);
+  padding: 14px 20px;
+  border: 1px solid rgba(26, 107, 90, 0.2);
   border-radius: var(--radius-md);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-ink);
-  background: var(--color-white);
-  transition: border-color var(--transition), box-shadow var(--transition);
+  background: var(--bg);
+  transition: var(--transition);
   outline: none;
   width: 100%;
 }
 .form-control:focus {
-  border-color: var(--color-teal);
-  box-shadow: 0 0 0 3px rgba(42,157,143,0.15);
+  border-color: var(--primary);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(26, 107, 90, 0.05);
 }
 .form-control::placeholder { color: var(--color-muted); }
 textarea.form-control { resize: vertical; min-height: 120px; }
-select.form-control { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 44px; }
+select.form-control { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8A85' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 44px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
 .form-hint { font-size: 0.8rem; color: var(--color-muted); }
 .form-error { font-size: 0.8rem; color: var(--color-error); }
 .form-success {
   background: var(--color-green-pale);
-  border: 1px solid var(--color-green);
-  color: var(--color-success);
+  border: 1px solid var(--secondary);
+  color: #8a5c0d;
   padding: 16px 20px;
   border-radius: var(--radius-md);
   font-weight: 500;
   display: none;
 }
 .form-success.visible { display: block; }
-
-/* ── Wave Divider ── */
-.wave-divider {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  margin: -1px 0;
-}
-.wave-divider svg { display: block; width: 100%; }
 
 /* ── Scroll Animations ── */
 .fade-in { opacity: 0; transition: opacity 0.6s ease; }
@@ -378,12 +370,12 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
   gap: 16px;
   transition: color var(--transition);
 }
-.accordion-trigger:hover { color: var(--color-teal); }
+.accordion-trigger:hover { color: var(--primary); }
 .accordion-icon {
   flex-shrink: 0;
   width: 24px; height: 24px;
   display: flex; align-items: center; justify-content: center;
-  color: var(--color-teal);
+  color: var(--primary);
   transition: transform var(--transition);
 }
 .accordion-item.open .accordion-icon { transform: rotate(180deg); }
@@ -398,14 +390,16 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
 /* ── Section Headers ── */
 .section-header { margin-bottom: 48px; }
 .section-header .section-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-teal);
-  margin-bottom: 8px;
+  color: var(--secondary);
+  margin-bottom: 16px;
 }
-.section-header h2 { margin-bottom: 16px; }
+.section-header h2 { margin-bottom: 16px; color: var(--primary); }
 .section-header p { color: var(--color-muted); max-width: 600px; font-size: 1.05rem; }
 
 /* ── CRA Number ── */
@@ -416,27 +410,28 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
   letter-spacing: 0.05em;
 }
 
-/* ── Footer ── */
+/* ── Footer ──
+   Light cream footer — same treatment as studentfinancial.ca. */
 .site-footer {
-  background: var(--color-navy-dark);
-  color: var(--color-white);
-  padding-top: 64px;
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 80px 0 40px;
+  border-top: 1px solid rgba(26, 107, 90, 0.1);
 }
 .footer-top {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 64px;
+  gap: 60px;
   padding-bottom: 48px;
 }
 .footer-brand { display: flex; flex-direction: column; gap: 16px; }
 .footer-logo {
-  height: 80px;
+  height: 48px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
 }
 .footer-tagline {
-  color: rgba(255,255,255,0.65);
+  color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -448,27 +443,27 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
 .footer-col h4 {
   font-family: var(--font-body);
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-teal-light);
+  color: var(--primary);
   margin-bottom: 16px;
 }
 .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
 .footer-col a {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.65);
+  color: var(--muted);
   transition: color var(--transition);
 }
-.footer-col a:hover { color: var(--color-white); }
+.footer-col a:hover { color: var(--primary); }
 .footer-divider {
   height: 1px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(26, 107, 90, 0.1);
   margin: 0 0 24px;
 }
 .footer-disclaimer {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.45);
+  color: #888;
   line-height: 1.65;
   padding-bottom: 20px;
 }
@@ -476,13 +471,13 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px;
+  border-top: 1px solid rgba(26, 107, 90, 0.1);
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.45);
+  color: var(--muted);
 }
 .footer-bottom a { transition: color var(--transition); }
-.footer-bottom a:hover { color: var(--color-white); }
+.footer-bottom a:hover { color: var(--primary); }
 .footer-maple { font-size: 0.85rem; }
 
 @media (max-width: 1024px) {
@@ -505,13 +500,13 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
   .grid-4 { grid-template-columns: 1fr; }
 }
 
-/* ── Scroll padding for fixed nav ── */
-html { scroll-padding-top: 80px; }
+/* ── Scroll padding for sticky nav ── */
+html { scroll-padding-top: 90px; }
 
 /* ── Disclaimer box ── */
 .disclaimer-box {
-  background: var(--color-linen);
-  border-left: 4px solid var(--color-teal);
+  background: var(--color-teal-pale);
+  border-left: 4px solid var(--primary);
   padding: 16px 20px;
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   font-size: 0.85rem;
@@ -522,14 +517,14 @@ html { scroll-padding-top: 80px; }
 /* ── Callouts ── */
 .callout-tip {
   background: var(--color-green-pale);
-  border-left: 4px solid var(--color-green);
+  border-left: 4px solid var(--secondary);
   padding: 16px 20px;
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   margin: 24px 0;
 }
 .callout-warning {
-  background: var(--color-linen);
-  border-left: 4px solid var(--color-teal);
+  background: var(--color-teal-pale);
+  border-left: 4px solid var(--primary);
   padding: 16px 20px;
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   margin: 24px 0;

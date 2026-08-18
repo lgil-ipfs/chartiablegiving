@@ -93,9 +93,9 @@ document.getElementById('newsletter-form')?.addEventListener('submit', function(
   const successEl = document.getElementById('newsletter-success');
   if (successEl) {
     successEl.style.display = 'block';
-    successEl.style.background = 'rgba(91,173,78,0.2)';
-    successEl.style.border = '1px solid var(--color-green)';
-    successEl.style.color = '#82C977';
+    successEl.style.background = 'rgba(232,160,32,0.18)';
+    successEl.style.border = '1px solid #E8A020';
+    successEl.style.color = '#f5b94d';
     successEl.style.padding = '12px 16px';
     successEl.style.borderRadius = 'var(--radius-md)';
     successEl.style.marginTop = '12px';

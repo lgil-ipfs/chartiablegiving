@@ -19,7 +19,7 @@
   function drawHeart(ctx, x, y, size, opacity) {
     ctx.save();
     ctx.globalAlpha = opacity;
-    ctx.fillStyle = '#2A9D8F';
+    ctx.fillStyle = '#E8614A';
     ctx.beginPath();
     ctx.translate(x, y);
     ctx.scale(size / 10, size / 10);
@@ -35,7 +35,7 @@
   function drawLeaf(ctx, x, y, size, rotation, opacity) {
     ctx.save();
     ctx.globalAlpha = opacity;
-    ctx.fillStyle = '#5BAD4E';
+    ctx.fillStyle = '#1A6B5A';
     ctx.translate(x, y);
     ctx.rotate(rotation);
     ctx.beginPath();

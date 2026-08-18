@@ -102,8 +102,9 @@ const ArticleService = {
   }
 };
 
-/* ── Mobile Navigation ── */
-(function initNav() {
+/* ── Mobile Navigation ──
+   Called from js/components.js once header.html has been injected. */
+function initNav() {
   const hamburger = document.getElementById('nav-hamburger');
   const mobileNav = document.getElementById('nav-mobile');
   const closeBtn = document.getElementById('nav-mobile-close');
@@ -129,10 +130,11 @@ const ArticleService = {
       }
     });
   }
-})();
+}
 
-/* ── Active Nav Link ── */
-(function setActiveNav() {
+/* ── Active Nav Link ──
+   Called from js/components.js once header.html has been injected. */
+function setActiveNav() {
   const path = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .nav-mobile-links a').forEach(a => {
     const href = a.getAttribute('href');
@@ -140,22 +142,7 @@ const ArticleService = {
       a.classList.add('active');
     }
   });
-})();
-
-/* ── Sticky Nav on Scroll ── */
-(function initStickyNav() {
-  const nav = document.getElementById('site-nav');
-  if (!nav) return;
-  function onScroll() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
+}
 
 /* ── IntersectionObserver for Animations ── */
 (function initAnimations() {

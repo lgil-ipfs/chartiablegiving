@@ -4,7 +4,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
-  background: var(--color-navy);
+  background: var(--color-navy-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,11 +25,12 @@
   padding-top: 80px;
 }
 .hero-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-teal-light);
+  color: var(--secondary);
   margin-bottom: 16px;
   display: block;
 }
@@ -104,7 +105,7 @@
 .journey-icon svg { width: 28px; height: 28px; }
 .journey-icon--teal { background: var(--color-teal-pale); color: var(--color-teal); }
 .journey-icon--green { background: var(--color-green-pale); color: var(--color-green); }
-.journey-icon--navy { background: rgba(27,47,110,0.08); color: var(--color-navy); }
+.journey-icon--navy { background: rgba(26,107,90,0.08); color: var(--color-navy); }
 .journey-link {
   display: flex;
   align-items: center;
@@ -133,7 +134,7 @@
 /* Article Skeletons */
 .article-card-skeleton {
   height: 300px;
-  background: linear-gradient(90deg, var(--color-linen) 25%, #e8eff5 50%, var(--color-linen) 75%);
+  background: linear-gradient(90deg, var(--color-linen) 25%, #efe6d8 50%, var(--color-linen) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }

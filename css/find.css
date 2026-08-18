@@ -8,11 +8,12 @@
 }
 .find-hero-content { max-width: 600px; }
 .find-hero .hero-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-teal-light);
+  color: var(--secondary);
   display: block;
   margin-bottom: 12px;
 }
@@ -192,7 +193,7 @@
   color: var(--color-muted);
   transition: all var(--transition);
 }
-.btn-heart:hover, .btn-heart.saved { color: #e63946; border-color: #e63946; }
+.btn-heart:hover, .btn-heart.saved { color: #E8614A; border-color: #E8614A; }
 .no-results { text-align: center; padding: 40px; color: var(--color-muted); grid-column: 1 / -1; }
 
 /* Directory */

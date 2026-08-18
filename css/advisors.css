@@ -8,11 +8,12 @@
 }
 .advisors-hero-content { max-width: 720px; }
 .advisors-hero .hero-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-teal-light);
+  color: var(--secondary);
   display: block;
   margin-bottom: 16px;
 }
@@ -43,7 +44,7 @@
 .how-step-num {
   width: 48px; height: 48px;
   background: var(--color-green);
-  color: white;
+  color: var(--text);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display);
