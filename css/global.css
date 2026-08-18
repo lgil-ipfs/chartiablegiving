@@ -401,6 +401,8 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
 }
 .section-header h2 { margin-bottom: 16px; color: var(--primary); }
 .section-header p { color: var(--color-muted); max-width: 600px; font-size: 1.05rem; }
+.text-center { text-align: center; }
+.section-header.text-center p { margin-left: auto; margin-right: auto; }
 
 /* ── CRA Number ── */
 .cra-number {

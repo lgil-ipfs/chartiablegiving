@@ -84,6 +84,34 @@
 .hero .slide-up { opacity: 0; transform: translateY(24px); }
 .hero-loaded .slide-up { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
 
+/* "Start With the Why" Examples */
+.why-examples {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 32px;
+}
+.why-example {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  border: 1px solid var(--color-border);
+}
+.why-example p {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-ink);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.why-example p::before { content: '\201C'; color: var(--secondary); font-weight: 700; }
+.why-example p::after { content: '\201D'; color: var(--secondary); font-weight: 700; }
+@media (max-width: 900px) {
+  .why-examples { grid-template-columns: 1fr; }
+}
+
 /* "Start With the Why" CTA Card */
 .why-cta-card {
   display: flex;
@@ -180,8 +208,6 @@
   text-align: center;
   margin-top: 48px;
 }
-.text-center { text-align: center; }
-.text-center .section-header p { margin: 0 auto; }
 
 /* Numbers Section */
 .numbers-grid { gap: 32px; }
