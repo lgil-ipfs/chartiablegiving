@@ -84,6 +84,77 @@
 .hero .slide-up { opacity: 0; transform: translateY(24px); }
 .hero-loaded .slide-up { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
 
+/* Who We Are */
+.who-we-are-section {
+  background: var(--color-white);
+  border-radius: 40px;
+  margin: 40px auto;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 72px;
+  align-items: center;
+}
+.about-content .section-header { margin-bottom: 20px; }
+.about-content .section-header h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+.about-lede {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-ink);
+  opacity: 0.85;
+  margin-bottom: 28px;
+}
+.mission-box {
+  background: var(--color-cream);
+  padding: 28px 32px;
+  border-radius: var(--radius-md);
+  border-left: 5px solid var(--secondary);
+}
+.mission-box h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.mission-box p {
+  margin: 0;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--color-ink);
+}
+.about-audiences {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about-audience-card {
+  background: var(--color-cream);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  border: 1px solid var(--color-border);
+}
+.about-audience-card h4 {
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.about-audience-card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .who-we-are-section { border-radius: 0; margin: 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
 /* "Start With the Why" Examples */
 .why-examples {
   display: grid;
