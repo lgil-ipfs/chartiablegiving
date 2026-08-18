@@ -31,7 +31,7 @@
 }
 .wizard-progress {
   height: 6px;
-  background: var(--color-linen);
+  background: var(--color-teal-pale);
   border-radius: 100px;
   overflow: hidden;
   margin-bottom: 12px;

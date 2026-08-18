@@ -23,7 +23,10 @@ window.addEventListener('scroll', () => {
 
 /* ── Generate Table of Contents ── */
 function buildTOC(container) {
-  const headings = container.querySelectorAll('h2, h3');
+  // Exclude headings inside embedded interactive tools (e.g. the "Start
+  // With the Why" wizard's question text) — those aren't real sections.
+  const headings = Array.from(container.querySelectorAll('h2, h3'))
+    .filter(h => !h.closest('.wizard'));
   const tocNav = document.getElementById('toc-nav');
   const tocCard = document.getElementById('toc-card');
   if (!tocNav || headings.length === 0) { if (tocCard) tocCard.style.display = 'none'; return; }
@@ -107,6 +110,7 @@ async function loadArticle() {
     if (bodyEl) {
       bodyEl.innerHTML = article.content;
       buildTOC(bodyEl);
+      if (typeof initWhyTool === 'function') initWhyTool();
     }
 
     // Load related articles

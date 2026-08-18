@@ -84,36 +84,42 @@
 .hero .slide-up { opacity: 0; transform: translateY(24px); }
 .hero-loaded .slide-up { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
 
-/* Journey Cards */
-.journey-card {
+/* "Start With the Why" CTA Card */
+.why-cta-card {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 32px;
+  align-items: center;
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
   text-decoration: none;
   color: var(--color-ink);
-  transition: transform var(--transition), box-shadow var(--transition);
 }
-.journey-card h3 { margin-bottom: 4px; }
-.journey-card p { color: var(--color-muted); font-size: 0.95rem; flex: 1; }
-.journey-icon {
-  width: 56px; height: 56px;
-  border-radius: var(--radius-md);
+.why-cta-icon {
+  flex-shrink: 0;
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--color-green-pale);
+  color: var(--color-green);
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 8px;
 }
-.journey-icon svg { width: 28px; height: 28px; }
-.journey-icon--teal { background: var(--color-teal-pale); color: var(--color-teal); }
-.journey-icon--green { background: var(--color-green-pale); color: var(--color-green); }
-.journey-icon--navy { background: rgba(26,107,90,0.08); color: var(--color-navy); }
-.journey-link {
+.why-cta-icon svg { width: 32px; height: 32px; }
+.why-cta-text { flex: 1; }
+.why-cta-text h3 { margin-bottom: 6px; }
+.why-cta-text p { color: var(--color-muted); font-size: 0.95rem; margin: 0; }
+.why-cta-link {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--color-teal);
-  margin-top: 8px;
+}
+.why-cta-link svg { width: 18px; height: 18px; }
+@media (max-width: 700px) {
+  .why-cta-card { flex-direction: column; text-align: center; padding: 32px 24px; }
+  .why-cta-link { margin-top: 4px; }
 }
 .journey-link svg { width: 16px; height: 16px; }
 
